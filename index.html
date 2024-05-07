@@ -52,39 +52,45 @@
 
         <!-- What if we had two divs, one for the header and the body, but tboth divs are contained inside the section which has the full width of the browser... -->
 
-        <section class="w-screen p-90 max-w-[1440px] min-w-[375px] bg-orange"><strong>Taken Down For updates!!, Pls hold: Contact +234-07049628148, for more info</strong>
+        <section class="w-screen p-90 max-w-5xl mx-auto min-w-[375px] h-full">
             <!--Header Container Begins-->
-            <div>
-                <header>
+            <div class="overflow-hidden flex lg:border-b-2 lg:border-white_greyish_blue">
+                <header class="flex p-6 bg-white lg:p-0 items-center w-full">
                     <!--Mobile Menu: hidden at 7xl-->
-                    <div>
-
+                    <div class="mr-6 translate-y-1 lg:hidden">
+                        <img src="assets/images/icon-menu.svg" alt="menu">
                     </div>
                     <!--Mobile menu Ends-->
 
                     <!--Logo Begins-->
-                    <div>
-
+                    <div class="lg:w-28">
+                        <img src="assets/images/logo.svg" alt="logo">
                     </div>
                     <!--Logo Ends-->
 
                     <!--Links: Visible at 7xl, should prolly use a list-->
-                    <div>
-
+                    <div class="hidden lg:flex ml-10 items-center">
+                        <ul class="flex gap-6">
+                            <li class="py-10 hover:border-b-2 hover:border-orange hover:pb-[39px]"><a href="#" class="text-sm text-dark_grayish_blue">Collections</a></li>
+                            <li class="py-10 hover:border-b-2 hover:border-orange hover:pb-[39px]"><a href="#" class="text-sm text-dark_grayish_blue">Men</a></li>
+                            <li class="py-10 hover:border-b-2 hover:border-orange hover:pb-[39px]"><a href="#" class="text-sm text-dark_grayish_blue">Women</a></li>
+                            <li class="py-10 hover:border-b-2 hover:border-orange hover:pb-[39px]"><a href="#" class="text-sm text-dark_grayish_blue">About</a></li>
+                            <li class="py-10 hover:border-b-2 hover:border-orange hover:pb-[39px]"><a href="#" class="text-sm text-dark_grayish_blue">Contact</a></li>
+                        </ul>
                     </div>
                     <!--Links Ends-->
 
                     <!--Cart n shii Begins-->
-                    <div>
+                    <div class="flex ml-auto justify-center items-center">
                         <!--Cart Begind-->
-                        <div>
-
+                        <div class="cursor-pointer">
+                            <img src="assets/images/icon-cart.svg" alt="cart">
                         </div>
                         <!--Cart Ends-->
 
                         <!--Avatar begins-->
-                        <div>
-
+                        <div class="w-6 ml-6 lg:ml-10 lg:w-10 hover:border-2 hover:border-orange rounded-full cursor-pointer">
+                            <img src="assets/images/image-avatar.png" alt="avatar">
                         </div>
                         <!--Avatar Ends-->
                     </div>
@@ -92,8 +98,82 @@
                 </header>
             </div>
             <!--Header Container Ends-->
-            <div>
+            <div class="overflow-hidden flex h-fit justify-center items-center mt-16">
+                <!--How about a div-container which holds the main content, inside another div which acts as a main-->
+                <!--div-container Begins--> 
+                <div class="flex-col px-6 items-center flex justify-center w-full md:flex-row">
+                    <!--Slider begins: hidden at prolly 4xl-->
+                    <div>
 
+                    </div>
+                    <!--Slider Ends-->
+
+                    <!--Images Container Begins: Shows When Slider hides-->
+                    <div class="w-96 mr-24 hidden md:flex md:flex-col">
+                        <div class="w-96 overflow-hidden rounded-md">
+                            <img src="assets/images/image-product-1.jpg" alt="image1">
+                        </div>
+                        <div class="flex w-96 justify-between mt-6">
+                            <div class="w-[20%] overflow-hidden rounded-md">
+                                <img src="assets/images/image-product-1-thumbnail.jpg" alt="image1">
+                            </div>
+                            <div class="w-[20%] overflow-hidden rounded-md">
+                                <img src="assets/images/image-product-2-thumbnail.jpg" alt="image2">
+                            </div>
+                            <div class="w-[20%] overflow-hidden rounded-md"> 
+                                <img src="assets/images/image-product-3-thumbnail.jpg" alt="image3">
+                            </div>
+                            <div class="w-[20%] overflow-hidden rounded-md">
+                                <img src="assets/images/image-product-4-thumbnail.jpg" alt="image4">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Image Container Ends-->
+
+                    <!--Main text-->
+                    <div class="w-[380px] min-[320px]:p-6">
+                        <div class="mb-3">
+                            <span class="text-xs font-extrabold text-orange tracking-widest uppercase">sneaker company</span>
+                        </div>
+                        <div class="mb-6">
+                            <main>
+                            <h1 class="text-4xl font-bold mb-7">Fall Limited Edition Sneakers</h1>
+                            <p class="text-sm text-dark_grayish_blue">These low-profile sneakers are yout perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+                            </main>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center">
+                                <span class="text-2xl font-bold tracking-wide">$125.00</span>
+                                <span class="text-xs py-[3px] px-[6px] bg-pale_orange rounded-md text-orange font-bold ml-3">50%</span>
+                            </div>
+                            <span class="text-sm text-grayish_blue font-bold"><del>$250.00</del></span>
+                        </div>
+
+                        <!--Buttons n stuff-->
+                        <div class="w-full gap-6 items-center mt-8 flex flex-col md:flex-row">
+                            <!--+ & --->
+                            <div class="bg-white_greyish_blue rounded-md grid gap-6 grid-cols-3 items-center p-4 w-full md:w-fit">
+                                <div class="flex items-center justify-center">
+                                    <img class="" src="assets/images/icon-plus.svg" alt="plus">
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <span class="text-sm font-bold">3</span>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <img src="assets/images/icon-minus.svg" alt="minus">
+                                </div>
+                            </div>
+                            <!--+ & --->
+
+                            <!--Add to cart-->
+                            <button class="p-4 w-full bg-orange text-white text-sm rounded-md">Add to cart</button>
+                            <!--Add to cart-->
+                        </div>
+                        <!--Buttons n stuff-->
+                    </div>
+                    <!--Main text Ends-->
+                </div>
+                <!--Div container Ends-->
             </div>
         </section>
     </body>
