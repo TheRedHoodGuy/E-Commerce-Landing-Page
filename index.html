@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>trhg - TheRedHoodGuy Socials | Frontend Mentor Challenge</title>
+        <link rel="icon" href="assets/images/favicon-32x32.png">
+
+        <!--Meta's-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="TheRedHoodGuy | Okpalannajiaku Xavier">
+        <meta name="description" content="Frontend Mentor Challenge Attempt - Two">
+        <!--Metas's-->
+
+        <!--Google Fonts and styles-->
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+        <!--Google Fonts-->
+
+        <!--Scripts-->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    colors: {
+                        orange: '#FF7D1A',
+                        pale_orange: '#FFEDE0',
+                        very_dark_blue: '#1D2025',
+                        dark_grayish_blue: '#68707D',
+                        grayish_blue: '#B6BCC8',
+                        white_greyish_blue: '#F7F8FD',
+                        white: '#FFFFFF',
+                        black: '#000000'
+                    },
+                    fontFamily: {
+                        main: ['Kumbh Sans', 'sans-serif']
+                    },
+                    extend: {
+                        // -- Shii goes here -- //
+                    }
+                },
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="index.js"></script>
+        <!--Scripts-->
+    </head>
+    <body class="w-screen h-screen font-main tracking-wide">
+        <!--Header-->
+        <header class="flex p-5 w-full items-center justify-start min-[999px]:w-[1000px] min-[999px]:mx-auto">
+            <div class="mr-4">
+                <img src="assets/images/icon-menu.svg" alt="...">
+                <div id="menu" class="hidden absolute z-50 w-screen bg-black bg-opacity-75 h-screen top-0 left-0">
+                    <div id="x" class="p-5 bg-white w-64" onclick="closeMenu()">
+                        <img src="assets/images/icon-close.svg" alt="x">
+                    </div>
+                    <div class="bg-white w-64 h-full">
+                        <ul class="p-5">
+                            <li class="mb-5 font-extrabold"><a href="#">Collections</a></li>
+                            <li class="mb-5 font-extrabold"><a href="#">Men</a></li>
+                            <li class="mb-5 font-extrabold"><a href="#">Women</a></li>
+                            <li class="mb-5 font-extrabold"><a href="#">About</a></li>
+                            <li class="mb-5 font-extrabold"><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="-translate-y-[1px]">
+                <img src="assets/images/logo.svg" alt="sneakers">
+            </div>
+            <div class="hidden gap-8 ml-14">
+                <a class="text-sm text-dark_grayish_blue py-10" href="#">Collections</a>
+                <a class="text-sm text-dark_grayish_blue py-10" href="#">Men</a>
+                <a class="text-sm text-dark_grayish_blue py-10" href="#">Women</a>
+                <a class="text-sm text-dark_grayish_blue py-10" href="#">About</a>
+                <a class="text-sm text-dark_grayish_blue py-10" href="#">Contact</a>
+            </div>
+            <div class="flex ml-auto">
+                <div>
+                    <img src="assets/images/icon-cart.svg" alt="Cart">
+                </div>
+                <div class="ml-5">
+                    <img class="w-5" src="assets/images/image-avatar.png" alt="You">
+                </div>
+            </div>
+        </header>
+        <!--Header-->
+
+        <!--Slider-->
+        <section class="min-[999px]:hidden">
+            <div class="swiper">
+                <div class="swiper-wrapper w-full h-64 flex items-center">
+                    <!--Slides-->
+                    <div class="swiper-slide">
+                        <img src="assets/images/image-product-1.jpg" alt="Product-1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/image-product-2.jpg" alt="Product-2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/image-product-3.jpg" alt="Product-3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/images/image-product-4.jpg" alt="Product-4">
+                    </div>
+                    <!--Slides-->
+
+                    <div class="swiper-button-prev flex justify-center items-center">
+                        <img class="stroke-white absolute" src="assets/images/icon-previous.svg" alt="prev">
+                    </div>
+                    <div class="swiper-button-next">
+                        <img class="stroke-white absolute" src="assets/images/icon-next.svg" alt="next">
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <script>
+            const swiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                loop: true,
+
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+        </script>
+        <!--Slider-->
+
+        <!--Body-->
+        <div class="min-[999px]:flex min-[999px]:w-[1000px] min-[999px]:mx-auto min-[999px]:my-auto min-[999px]:h-fit">
+            <!--Pics-->
+            <div class="justify-center items-center w-[45%] hidden min-[999px]:flex">
+                <div class="m-auto w-full flex flex-col justify-center items-center">
+                    <div class="flex overflow-hidden rounded-md w-[85%]">
+                        <img class="w-full" src="assets/images/image-product-1.jpg" alt="image1">
+                    </div>
+                    <div class="flex w-full overflow-hidden mt-6 gap-6 justify-center items-center">
+                        <div class="flex gap-6 w-[85%]">
+                            <div class="w-[25%] rounded-md overflow-hidden">
+                                <img class="w-full" src="assets/images/image-product-1-thumbnail.jpg" alt="image2">
+                            </div>
+                            <div class="w-[25%] rounded-md overflow-hidden">
+                                <img class="w-full" src="assets/images/image-product-2-thumbnail.jpg" alt="image2">
+                            </div>
+                            <div class="w-[25%] rounded-md overflow-hidden">
+                                <img class="w-full" src="assets/images/image-product-3-thumbnail.jpg" alt="image3">
+                            </div>
+                            <div class="w-[25%] rounded-md overflow-hidden">
+                                <img class="w-full" src="assets/images/image-product-4-thumbnail.jpg" alt="image34">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--pics-->
+            
+            <!--Main-->
+            <div class="min-[999px]:w-[50%] ml-auto min-[999px]:my-auto">
+                <section class="flex flex-col p-5">
+                    <div class="w-full mb-3">
+                        <span class="text-orange uppercase tracking-widest text-xs font-extrabold">sneaker company</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-extrabold w-full mb-3 min-[999px]:text-4xl min-[999px]:mb-8">Fall Limited Edition Sneakers</span>
+                        <span class="text-dark_grayish_blue font-normal text-sm">These low-profile sneakers are yout perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</span>
+                    </div>
+                </section>
+    
+                <section class="p-5 py-0 min-[999px]:mt-3 min-[999px]:mb-3">
+                    <div class="w-full flex items-center mb-3 min-[999px]:flex-col min-[999px]:items-start">
+                        <div class="flex justify-center items-center">
+                            <span class="text-2xl font-extrabold tracking-wide">$125.00</span>
+                            <div class="flex justify-center items-center p-1 bg-pale_orange rounded-md text-orange font-extrabold text-xs ml-3">
+                                <span>50%</span>
+                            </div>
+                        </div>
+                        <span class="ml-auto text-grayish_blue font-bold text-sm min-[999px]:ml-0 min-[999px]:mt-1"><del>$250.00</del></span>
+                    </div>
+    
+                    <div class="min-[999px]:flex min-[999px]:gap-4">
+                        <div class="w-full flex p-4 bg-white_greyish_blue rounded-md items-center mb-3 min-[999px]:mb-0">
+                            <div class="mr-auto">
+                                <img src="assets/images/icon-minus.svg" alt="minus">
+                            </div>
+                            <span class="my-auto font-bold text-sm" id="prevQty">
+                                4
+                            </span>
+                            <div class="ml-auto">
+                                <img src="assets/images/icon-plus.svg" alt="plus">
+                            </div>
+                        </div>
+        
+                        <button class="p-4 bg-orange w-full rounded-md flex items-center justify-center">
+                            <div class="w-6 mr-3">
+                                <svg class="fill-white" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="current-color" fill-rule="nonzero"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-sm font-bold text-white">Add to cart</span>
+                            </div>
+                        </button>
+                    </div>
+                </section>
+            </div>
+            <!--Main-->
+        </div>
+        <!--Body-->
+    </body>
+</html>
