@@ -45,7 +45,6 @@
             }
         </script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="index.js"></script>
         <!--Scripts-->
     </head>
     <body class="w-screen h-screen font-main tracking-wide">
@@ -54,7 +53,7 @@
 
         <section class="w-screen p-90 max-w-5xl mx-auto min-w-[375px] h-full">
             <!--Header Container Begins-->
-            <div class="overflow-hidden flex lg:border-b-2 lg:border-white_greyish_blue">
+            <div class="flex lg:border-b-2 lg:border-white_greyish_blue">
                 <header class="flex p-6 bg-white lg:p-0 items-center w-full">
                     <!--Mobile Menu: hidden at 7xl-->
                     <div class="mr-6 translate-y-1 lg:hidden">
@@ -83,8 +82,16 @@
                     <!--Cart n shii Begins-->
                     <div class="flex ml-auto justify-center items-center">
                         <!--Cart Begind-->
-                        <div class="cursor-pointer">
+                        <div class="relative cursor-pointer flex justify-center ">
                             <img src="assets/images/icon-cart.svg" alt="cart">
+                            <div class="absolute z-50 bg-orange mt-16 w-96 h-fit">
+                                <div>
+                                    <span>Cart</span>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
                         </div>
                         <!--Cart Ends-->
 
@@ -98,13 +105,75 @@
                 </header>
             </div>
             <!--Header Container Ends-->
-            <div class="overflow-hidden flex h-fit justify-center items-center mt-16">
+            <div class="overflow-hidden flex h-fit justify-center items-center mt-0 md:mt-16">
                 <!--How about a div-container which holds the main content, inside another div which acts as a main-->
                 <!--div-container Begins--> 
                 <div class="flex-col px-6 items-center flex justify-center w-full md:flex-row">
                     <!--Slider begins: hidden at prolly 4xl-->
-                    <div>
+                    <div class="md:hidden relative w-full max-w-96 overflow-hidden">
+                        <!--Slieder Container-->
+                        <div class="flex w-full mb-6">
+                            <img class="w-full" id="img">
+                            <div class="absolute h-full w-full flex items-center p-2">
+                                <div onclick="prev()" class="relative flex items-center justify-center rounded-full p-5 bg-white">
+                                    <svg class="absolute -ml-1" width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 1 3 9l8 8" stroke="black" stroke-width="3" fill="none" fill-rule="evenodd"/>
+                                    </svg>
+                                </div>                               
+                                <div onclick="next()" class="relative flex items-center justify-center rounded-full p-5 ml-auto bg-white">
+                                    <svg class="absolute -mr-1" width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m2 1 8 8-8 8" stroke="black" stroke-width="3" fill="none" fill-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            //This will be very procedural and simple, my javascript prowess fail me
 
+                            //Lets us Iterate through an array of images
+                            var images = [];
+                            //Timeout
+                            var time = 3000;
+
+                            const image = document.getElementById("img");
+
+                            //Our images
+                            images[0] = 'assets/images/image-product-1.jpg';
+                            images[1] = 'assets/images/image-product-2.jpg'; 
+                            images[2] = 'assets/images/image-product-3.jpg';
+                            images[3] = 'assets/images/image-product-4.jpg';
+
+                            //Lets have a function to change Images automatically
+                            function changeImage(){
+                                image.src = images[0];
+                                if(i < images.length - 1){
+                                    i++;
+                                }
+                                else{
+                                    i = 0;
+                                }
+
+                            }
+
+                            window.onload = changeImage;
+
+                            function prev(){
+                                alert(i);
+                                i++;
+                                image.src = image[i];
+                                if(i > images.length - 1){
+                                    i = 0;
+                                }
+                            }
+                            function next(){
+                                i--;
+                                image.src = image[i];
+                                if(i < images.length - 1){
+                                    i = 3;
+                                }
+                            }
+                        </script>
+                        <!--SLider container ends-->
                     </div>
                     <!--Slider Ends-->
 
@@ -131,7 +200,7 @@
                     <!--Image Container Ends-->
 
                     <!--Main text-->
-                    <div class="w-[380px] min-[320px]:p-6">
+                    <div class="w-[380px] max-[370px]:p-6">
                         <div class="mb-3">
                             <span class="text-xs font-extrabold text-orange tracking-widest uppercase">sneaker company</span>
                         </div>
@@ -152,21 +221,17 @@
                         <!--Buttons n stuff-->
                         <div class="w-full gap-6 items-center mt-8 flex flex-col md:flex-row">
                             <!--+ & --->
-                            <div class="bg-white_greyish_blue rounded-md grid gap-6 grid-cols-3 items-center p-4 w-full md:w-fit">
-                                <div class="flex items-center justify-center">
-                                    <img class="" src="assets/images/icon-plus.svg" alt="plus">
-                                </div>
+                            <div class="bg-white_greyish_blue rounded-md flex gap-8 p-4 px-6 items-center justify-between md:justify-center w-full md:w-fit">
+                                    <img src="assets/images/icon-plus.svg" alt="plus">
                                 <div class="flex items-center justify-center">
                                     <span class="text-sm font-bold">3</span>
                                 </div>
-                                <div class="flex items-center justify-center">
                                     <img src="assets/images/icon-minus.svg" alt="minus">
-                                </div>
                             </div>
                             <!--+ & --->
 
                             <!--Add to cart-->
-                            <button class="p-4 w-full bg-orange text-white text-sm rounded-md">Add to cart</button>
+                            <button class="p-4 bg-orange text-white text-sm rounded-md w-full">Add to cart</button>
                             <!--Add to cart-->
                         </div>
                         <!--Buttons n stuff-->
